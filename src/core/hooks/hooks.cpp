@@ -5,7 +5,7 @@
 
 bool hooks::Setup()
 {
-	if (MH_Initialize() != MH_OK)
+	if (MH_Initialize() != MH_OK) 
 	{
 		return false;
 	}

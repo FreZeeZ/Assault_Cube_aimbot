@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Assault_Cube_aimbot.vcxproj" />
+  <Project Path="Assault_Cube_aimbot.vcxproj" Id="a328c179-1fc9-4e61-9218-3f5cce175531" />
 </Solution>
