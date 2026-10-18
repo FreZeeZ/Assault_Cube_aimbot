@@ -1,5 +1,7 @@
 #pragma once
-class hooks
+namespace hooks
 {
-};
+	bool Setup();
+	void Release();
+}
 

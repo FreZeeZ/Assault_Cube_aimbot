@@ -1,5 +1,5 @@
 #pragma once
-class console
+namespace console
 {
-};
-
+	void activate();
+}
