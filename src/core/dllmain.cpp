@@ -11,7 +11,7 @@ DWORD WINAPI Cube(LPVOID module)
 	freopen_s(&f, "CONOUT$", "w", stdout);
 
 	hooks::Setup();
-
+	std::cout << "yapi!\n";
 	while (!(GetAsyncKeyState(VK_END) & 1))
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(150));
@@ -33,5 +33,4 @@ BOOL __stdcall DllMain(HMODULE hModule, DWORD reson, LPVOID lp)
 		CreateThread(nullptr, NULL, Cube, hModule, NULL, nullptr);
 	}
 	return TRUE;
-
 }
