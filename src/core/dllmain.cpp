@@ -5,6 +5,19 @@
 #include "hooks/hooks.h"
 #include "func/aimbot.h"
 
+bool g_Running = true;
+std::thread g_LogicThread;
+
+void LogicLoop()
+{
+	while (g_Running)
+	{
+		aim::AimBot();
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+	}
+}
+
+
 DWORD WINAPI Cube(LPVOID module)
 {
 	AllocConsole();
@@ -31,6 +44,7 @@ BOOL __stdcall DllMain(HMODULE hModule, DWORD reson, LPVOID lp)
 {
 	if (reson == DLL_PROCESS_ATTACH)
 	{
+		g_LogicThread = std::thread(LogicLoop);
 		CreateThread(nullptr, NULL, Cube, hModule, NULL, nullptr);
 	}
 	return TRUE;
