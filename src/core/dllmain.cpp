@@ -3,6 +3,7 @@
 #include <thread>
 #include <chrono>
 #include "hooks/hooks.h"
+#include "func/aimbot.h"
 
 DWORD WINAPI Cube(LPVOID module)
 {
@@ -11,7 +12,7 @@ DWORD WINAPI Cube(LPVOID module)
 	freopen_s(&f, "CONOUT$", "w", stdout);
 
 	hooks::Setup();
-	std::cout << "yapi!\n";
+
 	while (!(GetAsyncKeyState(VK_END) & 1))
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(150));

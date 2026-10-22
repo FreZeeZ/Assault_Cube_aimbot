@@ -1,5 +1,8 @@
 #pragma once
-class aimbot
+#include "../../sdk/math/math.h"
+namespace aim
 {
-};
+	void AimBot();
+	void GetClossestEntity();
 
+}

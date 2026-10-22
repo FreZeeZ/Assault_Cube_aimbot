@@ -22,6 +22,10 @@ void console::activate()
 			cout << "Insert - print control panel\n"
 				 << "press END for disable console control\n";
 		}
+		if (GetAsyncKeyState(VK_F1) & 1)
+		{
+		    aim::AimBot();
+		}
 
 		this_thread::sleep_for(chrono::milliseconds(15));
 	}
